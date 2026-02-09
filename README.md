@@ -108,15 +108,15 @@ The file contains:
 
 ### 🔹 Graph 1: Generation Speed (Tokens per Second)
 
-**[<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/7dcfb929-cd70-47a6-b0fd-d243d61585ed" />
-]**
+**<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/7dcfb929-cd70-47a6-b0fd-d243d61585ed" />
+**
 
 (Bar chart comparing tokens per second for each model)
 
 ### 🔹 Graph 2: Overall TOPSIS Ranking
 
-**[<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/a36a5753-efe1-4ff3-91c6-c26c9dd20a1a" />
-]**
+**<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/a36a5753-efe1-4ff3-91c6-c26c9dd20a1a" />
+**
 
 (Bar chart showing TOPSIS score for each model, sorted by rank)
 
