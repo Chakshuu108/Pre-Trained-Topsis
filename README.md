@@ -25,7 +25,59 @@ This project uses the **TOPSIS (Technique for Order of Preference by Similarity 
 
 **Weights:** All criteria are equally weighted (0.2 each).
 
-## 🔬 Methodology
+## 🧩 Code Pipeline (Workflow)
+
+1. **Import Libraries**
+   - Load PyTorch, Transformers, NumPy, Pandas, Matplotlib, etc.
+
+2. **Define Models List**
+   - Specify the names of all models to be evaluated.
+
+3. **Load Model and Tokenizer**
+   - Load each model using Hugging Face Transformers.
+   - Move model to GPU if available, else CPU.
+
+4. **Prepare Input Text**
+   - Use the same fixed prompt for all models to ensure fair comparison.
+
+5. **Warm-up Run**
+   - Run one generation pass to stabilize performance (especially on GPU).
+
+6. **Measure Performance**
+   - Generate 50 tokens.
+   - Measure:
+     - Latency (time taken)
+     - Tokens per second (throughput)
+     - Perplexity (using loss)
+   - Collect:
+     - Model size (MB)
+     - Number of parameters
+
+7. **Create Decision Matrix**
+   - Store all metrics for all models in a table (Pandas DataFrame).
+
+8. **Apply TOPSIS**
+   - Normalize the decision matrix.
+   - Apply weights to each criterion.
+   - Determine ideal best and ideal worst.
+   - Compute distance from best and worst.
+   - Calculate TOPSIS score:
+     ```
+     Score = S_worst / (S_best + S_worst)
+     ```
+   - Rank models based on the score.
+
+9. **Save Results**
+   - Export final table with scores and ranks to:
+     ```
+     topsis_text_generation_results.csv
+     ```
+
+10. **Generate Graphs**
+    - Bar chart: Tokens per Second vs Models
+    - Bar chart: TOPSIS Score vs Models (sorted by rank)
+
+## 🔬 Methodology (Short)
 
 1. Load each model using Hugging Face Transformers.  
 2. Use the same input prompt for all models.  
@@ -33,16 +85,8 @@ This project uses the **TOPSIS (Technique for Order of Preference by Similarity 
    - Latency  
    - Throughput (tokens/sec)  
    - Perplexity  
-4. Collect model size and parameter count from metadata.  
-5. Apply TOPSIS:
-   - Normalize data  
-   - Apply weights  
-   - Compute ideal best and worst  
-   - Calculate TOPSIS score  
-   - Rank models based on score  
-
-**TOPSIS Formula:**
-Score = S_worst / (S_best + S_worst)
+4. Collect model size and parameter count.  
+5. Apply TOPSIS to rank the models.
 
 ## 📊 Results
 
@@ -81,4 +125,3 @@ This analysis shows that no single model is best in all aspects. The **TOPSIS me
 ---
 
 **Assignment submitted for UCS654** ✅
-
