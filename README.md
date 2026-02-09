@@ -123,7 +123,3 @@ The file contains:
 ## 💡 Conclusion
 
 This analysis shows that no single model is best in all aspects. The **TOPSIS method** combines multiple criteria into a single score, helping to select the most balanced model for practical use.
-
----
-
-**Assignment submitted for UCS654** ✅
