@@ -77,7 +77,7 @@ This project uses the **TOPSIS (Technique for Order of Preference by Similarity 
     - Bar chart: Tokens per Second vs Models
     - Bar chart: TOPSIS Score vs Models (sorted by rank)
 
-## 🔬 Methodology (Short)
+## 🔬 Methodology
 
 1. Load each model using Hugging Face Transformers.  
 2. Use the same input prompt for all models.  
